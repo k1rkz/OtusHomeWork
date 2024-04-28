@@ -5,14 +5,6 @@
 from typing import List, Any
 
 
-# def power_numbers(*num):
-#     print([n ** 2 for n in num])
-
-
-# def power_numbers(*num):
-#     print([n ** 2 for n in num])
-
-
 def power_numbers(*num):
     return [n ** 2 for n in num]
 
