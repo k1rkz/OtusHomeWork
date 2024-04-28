@@ -5,11 +5,19 @@
 from typing import List, Any
 
 
+# def power_numbers(*num):
+#     print([n ** 2 for n in num])
+
+
+# def power_numbers(*num):
+#     print([n ** 2 for n in num])
+
+
 def power_numbers(*num):
-    print([n ** 2 for n in num])
+    return [n ** 2 for n in num]
 
 
-power_numbers(1, 3, 5, 6)
+print(power_numbers(1, 3, 5, 6))
 
 # filter types
 
