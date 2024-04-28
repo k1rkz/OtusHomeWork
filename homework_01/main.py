@@ -2,7 +2,7 @@
 Домашнее задание №1
 Функции и структуры данных
 """
-from typing import List, Any
+
 
 
 def power_numbers(*num):
