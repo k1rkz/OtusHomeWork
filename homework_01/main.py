@@ -2,27 +2,29 @@
 Домашнее задание №1
 Функции и структуры данных
 """
+from typing import List, Any
 
 
 def power_numbers(*num):
     print([n ** 2 for n in num])
 
 
-print("Квадраты чисел")
 power_numbers(1, 3, 5, 6)
 
 # filter types
-ODD = "odd"
-EVEN = "even"
-PRIME = "prime"
 
 
 def prime(i):
-    for el in i:
-        if el % el == 0 and el != 0:
-            return True
-        else:
-            return False
+    if i == 1:
+        return False
+    test = True
+    k = i - 1
+    while k > 1:
+        if not i % k:
+            test = False
+            break
+        k -= 1
+    return i if test else False
 
 
 def even(i):
@@ -39,22 +41,15 @@ def odd(i):
         return False
 
 
-def filter_numbers(num, condition):
-    print(condition)
-    return print(list(filter(condition, num)))
-
-    """
-    функция, которая на вход принимает список из целых чисел,
-    и возвращает только чётные/нечётные/простые числа
-    (выбор производится передачей дополнительного аргумента)
-
-filter_numbers([1, 2, 3], ODD)
-    <<< [1, 3]
-    >>> filter_numbers([2, 3, 4, 5], EVEN)
-    <<< [2, 4]
-    """
+ODD = odd
+EVEN = even
+PRIME = prime
 
 
-# filter_numbers([1, 2, 3], ODD)
-# filter_numbers([2, 3, 4, 5], EVEN)
-filter_numbers([1, 2, 3, 4, 5, 7], PRIME)
+def filter_numbers(li, condition):
+    return list(filter(condition, li))
+
+
+print(filter_numbers([1, 2, 3], ODD))
+print(filter_numbers([2, 3, 4, 5], EVEN))
+print(filter_numbers([1, 2, 3, 4, 5, 7], PRIME))
